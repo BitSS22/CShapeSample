@@ -45,7 +45,14 @@ public class LinkedList<Type>
         public Type Data = default!;
     }
 
-    node DNode = new(default!);
+    public LinkedList()
+    {
+        DNode = new(default!);
+        DNode.Prev = DNode;
+        DNode.Next = DNode;
+    }
+
+    node DNode;
     public UInt64 size { get; private set; } = 0;
 
     public void PushBack(Type _Item)
